@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.ToString;
 
 @Entity
-@Table(name = "rooms")
+@Table(name = "rooms", schema = "LIL")
 @Data
 @ToString
 public class Room {
@@ -20,6 +20,5 @@ public class Room {
     private String roomNumber;
     @Column(name = "bed_info")
     private String bedInfo;
-
 
 }
