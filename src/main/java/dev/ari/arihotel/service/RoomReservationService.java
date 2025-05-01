@@ -29,7 +29,7 @@ public class RoomReservationService {
     }
 
     public List<RoomReservation> getRoomReservationsForDate(String reservationDate) {
-        Date date = null;
+        Date date;
         if (StringUtils.isNotEmpty(reservationDate)) {
             date = Date.valueOf(reservationDate); // asumes yyyy-MM-dd format
         } else {
