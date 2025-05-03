@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: commonHead('Occupancy')}"></head>
+<body class="d-flex flex-column">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main class="container mt-4 flex-grow-1">
+    <h1>Occupancy</h1>
+
+    <div class="mb-3">
+        <input id="picker" type="date" onchange="handleDate()" th:value="${#dates.format(date, 'yyyy-MM-dd')}" class="form-control w-auto" />
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Room Number</th>
+            <th scope="col">Room Name</th>
+            <th scope="col">Guest</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.roomNumber}">Room Number</td>
+            <td th:text="${reservation.roomName}">Room Name</td>
+            <td th:text="${reservation.lastName != null} ? ${reservation.lastName} + ', ' + ${reservation.firstName} : 'VACANT'">Guest</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+<div th:replace="~{fragments/scripts :: commonScripts}"></div>
+
+<script type="text/javascript">
+    function handleDate(){
+        let date = document.getElementById("picker").valueAsDate
+        let result = date.toISOString().split('T')[0]
+        if ('URLSearchParams' in window) {
+            var searchParams = new URLSearchParams(window.location.search);
+            searchParams.set("date", result);
+            window.location.search = searchParams.toString();
+        }
+    }
+</script>
+
+</body>
+</html>

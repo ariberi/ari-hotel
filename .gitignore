@@ -33,8 +33,10 @@ build/
 .vscode/
 
 ### docs ###
-docs
-
+docs/
 
 ### docker ###
-docker-arihotel
+docker-arihotel/
+
+### node-modules ###
+node_modules/

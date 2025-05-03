@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: commonHead('Rooms')}"></head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main class="container">
+    <h1>Rooms</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Number</th>
+            <th scope="col">Bed</th>
+            <th scope="col">Bed Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="room : ${rooms}">
+            <td th:text="${room.id}">Id</td>
+            <td th:text="${room.roomNumber}">Room Number</td>
+            <td th:text="${room.name}">Name</td>
+            <td th:text="${room.bedInfo}">Bed Info</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+<div th:replace="~{fragments/scripts :: commonScripts}"></div>
+
+</body>
+</html>
