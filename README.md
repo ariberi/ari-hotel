@@ -3,17 +3,6 @@
 
 **Ari Hotel** es una API RESTful desarrollada con Spring Boot que gestiona habitaciones, huéspedes y ocupación hotelera, incluyendo también una interfaz web basada en Thymeleaf.
 
-## Tecnologías utilizadas
-
-- Java 21
-- Spring Boot 3
-- Thymeleaf
-- PostgreSQL (contenedor Docker)
-- Bootstrap 5
-- Sass (estructura modular)
-- Peticiones HTTP
-- Controladores REST (API RESTful)
-
 ## Características
 
 - API RESTful para gestionar habitaciones (`Room`), huéspedes (`Guest`) y reservas (`Reservation`)
@@ -65,7 +54,3 @@ Los endpoints REST están disponibles en rutas como:
 - `src/main/resources/static`: Archivos estáticos (CSS/SASS, JS)
 - `docker-compose.yml`: Configuración de PostgreSQL en Docker
 - `pom.xml`: Dependencias y configuración de Maven
-
----
-
-Creado con ❤️ por [@ariberi](https://github.com/ariberi)
